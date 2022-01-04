@@ -16,7 +16,7 @@ pipeline{
                    inputArray=$SERVERIPS
                    echo $inputArray
                    IFS=',' read -r -a outputArray <<< "$inputArray"
-                   for ip in ${outputArray[@]}
+                   for ip in \"${outputArray[@]}\"
                    do
                    echo "server ip is : $ip"
                    done
