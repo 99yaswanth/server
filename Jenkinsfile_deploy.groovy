@@ -16,7 +16,7 @@ pipeline{
                    inputArray=$SERVERIPS
                    echo $inputArray
                    IFS=',' read -r -a outputArray <<< "$inputArray"
-                   for ip in \"${outputArray[@]}\"
+                   for ip in ${outputArray[@]}
                    do
                    echo "server ip is : $ip"
                    done
@@ -24,7 +24,7 @@ pipeline{
                  scp -o StrictHostKeyChecking=no -i /tmp/nvirginia1.pem hello-${BUILD}.war ec2-user@$ip:/tmp/
                  ssh -o StrictHostKeyChecking=no -i /tmp/nvirginia1.pem ec2-user@$ip "sudo cp /tmp/hello-${BUILD}.war /var/lib/tomcat/webapps"
                    
-                   
+  
                    '''
             }
         }
