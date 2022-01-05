@@ -22,7 +22,7 @@ pipeline{
                    done
 
                  scp -o StrictHostKeyChecking=no -i /tmp/nvirginia1.pem /var/lib/jenkins/jobs/build/workspace/target/hello-*.war ec2-user@$ip:/tmp/
-                 ssh -o StrictHostKeyChecking=no -i /tmp/nvirginia1.pem ec2-user@$ip "sudo cp /tmp/hello-*.war /var/lib/tomcat/webapps"
+                 ssh -o StrictHostKeyChecking=no -i /tmp/nvirginia1.pem ec2-user@$ip "cp /tmp/hello-*.war /var/lib/tomcat/webapps"
                    
   
                    '''
